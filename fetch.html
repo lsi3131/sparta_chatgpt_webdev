@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch 시작하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Fetch 연습을 위한 페이지</h1>
+
+    <script>
+        fetch("http://spartacodingclub.shop/sparta_api/seoulair") // 기본 요청(GET)
+            .then(res => res.json()) // 요청해서 받은 데이터를 JSON화
+            .then(data => { // JSON화 한 데이터를 다시 data로 이름짓기
+                let rows = data['RealtimeCityAir']['row']
+                rows.forEach((a) => {
+                    // 미세먼지 데이터 리스트의 길이만큼 반복해서 하나씩 개발자 도구에서 보기
+                    // 구의 이름, 미세먼지 수치 값을 개발자 도구에서 찍어보기
+                    console.log(a['MSRSTE_NM'], a['IDEX_MVL'])
+                })
+            })
+    </script>
+</body>
+
+</html>

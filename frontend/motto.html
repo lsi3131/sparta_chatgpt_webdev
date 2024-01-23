@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-          /* font */
+        /* font */
         @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
         * {
             font-family: "Nanum Gothic", "sans-serif";
         }
+
         body {
             background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/webjong/images/background.jpg");
             background-position: center;
@@ -84,7 +85,7 @@
     <div class="container">
         <div class="greeting">
             <h1>Hello, My name!</h1>
-            <h1>12:30</h1>
+            <h1 id="current-time"></h1>
         </div>
 
         <div class="motto">
@@ -99,5 +100,28 @@
     </div>
 
 </body>
+<script>
+    function displayCurrentTime() {
+        // 현재 날짜와 시간을 얻어오기
+        const now = new Date();
+
+        // 시, 분, 초 추출
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        // 출력 문자열 생성
+        const timeString = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+        // 결과를 HTML 요소에 표시
+        document.getElementById('current-time').innerText = timeString;
+    }
+
+    // 1초마다 현재 시간을 갱신하기 위해 setInterval 사용
+    setInterval(displayCurrentTime, 1000);
+
+    // 페이지 로드 시 초기 시간 표시
+    displayCurrentTime();
+</script>
 
 </html>
