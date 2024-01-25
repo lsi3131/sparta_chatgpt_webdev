@@ -78,7 +78,7 @@
             alt="" />
         <div class="weather">
             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" id="weather-icon">
-            <p>날씨 맑음, 20ºC</p>
+            <p id="weatherTemp">날씨 맑음, 20ºC</p>
         </div>
     </nav>
 
@@ -95,11 +95,12 @@
     </div>
 
     <div class="footer">
-        <p>- 작자 미상 -</p>
-        <p>멋진 명언입니다. 아이스크림을 먹으면 행복해져요.</p>
+        <p id="quoteAuthor">- 작자 미상 -</p>
+        <p id="quoteContent">멋진 명언입니다. 아이스크림을 먹으면 행복해져요.</p>
     </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     function displayCurrentTime() {
         // 현재 날짜와 시간을 얻어오기
@@ -122,6 +123,37 @@
 
     // 페이지 로드 시 초기 시간 표시
     displayCurrentTime();
+
+    $(document).ready(function renderQuote() {
+        let url = `https://api.quotable.io/random`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data)
+                let author = data["author"]
+                let content = data["content"];
+
+                let author2 = `- ${author} -`
+                let content2 = `" ${content} "`
+
+                $("#quoteAuthor").text(author2);
+                $("#quoteContent").text(content2);
+            });
+    })
+
+    $(document).ready(function renderWeather() {
+        let weather_url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(weather_url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                let temp = data["temp"]
+                let temp_str = `${temp} ºC`
+
+                $("#weatherTemp").text(temp_str);
+            })
+    })
+
 </script>
 
 </html>
