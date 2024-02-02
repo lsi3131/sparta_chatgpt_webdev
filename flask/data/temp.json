@@ -1,0 +1,85 @@
+{
+  "movieListResult": {
+    "totCnt": 4,
+    "source": "영화진흥위원회",
+    "movieList": [
+      {
+        "movieCd": "20236433",
+        "movieNm": "사랑하는 기생충",
+        "movieNmEn": "Parasite in Love",
+        "prdtYear": "2021",
+        "openDt": "20240116",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "일본",
+        "genreAlt": "드라마",
+        "repNationNm": "일본",
+        "repGenreNm": "드라마",
+        "directors": [
+          {
+            "peopleNm": "카키모토 켄사쿠"
+          }
+        ],
+        "companys": []
+      },
+      {
+        "movieCd": "20183782",
+        "movieNm": "기생충",
+        "movieNmEn": "PARASITE",
+        "prdtYear": "2019",
+        "openDt": "20190530",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "한국",
+        "genreAlt": "드라마",
+        "repNationNm": "한국",
+        "repGenreNm": "드라마",
+        "directors": [
+          {
+            "peopleNm": "봉준호"
+          }
+        ],
+        "companys": [
+          {
+            "companyCd": "20100558",
+            "companyNm": "(주)바른손이앤에이"
+          }
+        ]
+      },
+      {
+        "movieCd": "20207361",
+        "movieNm": "마약 기생충",
+        "movieNmEn": "Running With The Devil",
+        "prdtYear": "2019",
+        "openDt": "",
+        "typeNm": "장편",
+        "prdtStatNm": "기타",
+        "nationAlt": "콜롬비아,미국",
+        "genreAlt": "액션,스릴러",
+        "repNationNm": "콜롬비아",
+        "repGenreNm": "액션",
+        "directors": [],
+        "companys": []
+      },
+      {
+        "movieCd": "20198543",
+        "movieNm": "파라노말 기생충",
+        "movieNmEn": "The Unbelievable Ability",
+        "prdtYear": "2018",
+        "openDt": "20190310",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "일본",
+        "genreAlt": "멜로/로맨스",
+        "repNationNm": "일본",
+        "repGenreNm": "멜로/로맨스",
+        "directors": [
+          {
+            "peopleNm": "나츠메 타이치로"
+          }
+        ],
+        "companys": []
+      }
+    ]
+  }
+}
