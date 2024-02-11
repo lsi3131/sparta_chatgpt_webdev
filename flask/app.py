@@ -46,6 +46,18 @@ def movie():
 
     return flask.render_template('movie.html', data=movie_list)
 
+@app.route('/answer')
+def answer():
+    query = flask.request.args.get('query')
+    if len(query) == 0:
+        query = '20230611'
+    URL = (f"http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/"
+           f"searchWeeklyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt={query}")
+    res = requests.get(URL)
+    rjson = res.json()
+    movie_list = rjson["boxOfficeResult"]["weeklyBoxOfficeList"]
+
+    return flask.render_template('answer.html', data=movie_list)
 
 @app.route('/mypage')
 def mypage():
